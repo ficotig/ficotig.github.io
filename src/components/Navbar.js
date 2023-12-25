@@ -24,8 +24,7 @@ const links = [
    {
       name: 'Policy Privacy',
       to: '/privacy-policy',
-      active: 'privacy-policy',
-      image:'./icon.png'
+      active: 'privacy-policy'
    },
 ]
 
