@@ -1,85 +1,44 @@
 import React from 'react';
 import Style from './About.module.scss';
 import Terminal from "./Terminal";
-import {Box} from "@mui/material";
-
+import { Box } from "@mui/material";
+import moment from "moment";
 
 export default function About() {
 
    function aboutMeText() {
       return <>
-         <p><span className={Style.pink}>paytonpierce $</span> cat aboutpayton </p>
-         <p><span className={Style.pink}>aboutpayton <span className={Style.green}>(main)</span> $ </span>
-            Hello! I'm Payton, a front-end developer from Wisconsin. I love creating web
-            applications with React, and I'm currently studying NodeJS. I've been working for <a
-               target={'_blank'} rel={'noreferrer'} href={'https://mathisonprojectsinc.com'}>Mathison
-               Projects</a> since July 2021.
-         </p>
-         <p>I still don't know if it's "front-end",
-            "frontend, or "front end", and at this point I'm too afraid to ask.
-         </p>
-      </>;
-   }
-
-   function skillsText() {
-      return <>
-         <p><span className={Style.pink}>paytonpierce $</span> cd skills/tools</p>
-         <p><span className={Style.pink}>skills/tools <span
-            className={Style.green}>(main)</span> $</span> ls</p>
-         <p className={Style.pink}> Proficient With</p>
-         <ul className={Style.skills}>
-            <li>JavaScript</li>
-            <li>React</li>
-            <li>HTML5</li>
-            <li>CSS3</li>
-            <li>Bootstrap</li>
-            <li>Material UI</li>
-            <li>Tailwind</li>
-            <li>Sass</li>
-            <li>Scss Modules</li>
-            <li>Git</li>
-            <li>Github</li>
-            <li>npm</li>
-            <li>API Requests</li>
-            <li>JSON</li>
-            <li>Custom React Hooks</li>
-            <li>Jest</li>
-            <li>Cypress</li>
-            <li>Strapi</li>
-         </ul>
-         <p className={Style.pink}> Exposed To</p>
-         <ul className={Style.skills}>
-            <li>Node</li>
-            <li>Express</li>
-            <li>Vue</li>
-            <li>Firebase</li>
-            <li>AWS</li>
-            <li>Figma</li>
-         </ul>
-      </>;
-   }
-
-   function miscText() {
-      return <>
-         <p><span className={Style.pink}>paytonpierce $</span> cd hobbies/interests</p>
-         <p><span className={Style.pink}>hobbies/interests <span
-            className={Style.green}>(main)</span> $</span> ls</p>
+         <p><span className={Style.pink}>ficotig $</span> cat profile </p>
+         <p><span className={Style.pink}>ficotig/profile <span className={Style.green}>(main)</span> $ </span> ls</p>
+         <p><span className={Style.yellow}> ***** My Profile *****</span></p>
          <ul>
-            <li><Box component={'span'} mr={'1rem'}>📖</Box>reading</li>
-            <li><Box component={'span'} mr={'1rem'}>🎨</Box>digital art</li>
-            <li><Box component={'span'} mr={'1rem'}>🎥</Box>movies</li>
-            <li><Box component={'span'} mr={'1rem'}>🔮</Box>horror / spooky stuff</li>
-            <li><Box component={'span'} mr={'1rem'}>🍲</Box>cooking/food, particularly of the spicy variety
-            </li>
+            <li>Full Name: Pham Nhut Thanh</li>
+            <li>Year of Birth: 1998 🐯 ({moment().local().format('YYYY') - 1998} year old)</li>
+            <li>Province: Dong Thap</li>
+            <li>Job: Freelance programmer</li>
+            <li>Degree: I graduated from the University of Science in Ho Chi Minh City</li>
+            <li>Major: Software engineering</li>
+            <li>Hobbies: Listen to music, and watch movies on Netflix, or travel</li>
+            <li>Marriage: None</li>
+            <li>Interested in: Girls</li>
          </ul>
+      </>;
+   }
+
+   function philosophyOfLifeText() {
+      return <>
+         <p><span className={Style.pink}>ficotig $</span> cd profile/philosophyOfLife</p>
+         <p><span className={Style.pink}>ficotig/profile/philosophyOfLife <span className={Style.green}>(main)</span> $</span> ls</p>
+         <span className={Style.green}>
+         I have a quiet personality and I am always striving for perfection in everything I do. I despise carelessness and consider quality to be the most important criterion for the products I create. I am passionate about developing applications with simple yet high-quality and captivating graphics. I pay close attention to how users feel so that I can improve the quality of my applications and enhance my value.
+         </span>
       </>;
    }
 
    return (
       <Box display={'flex'} flexDirection={'column'} alignItems={'center'} mt={'3rem'}>
-         <Terminal text={aboutMeText()}/>
-         <Terminal text={skillsText()}/>
-         <Terminal text={miscText()}/>
+         <Terminal text={aboutMeText()} />
+         <Terminal text={philosophyOfLifeText()} />
       </Box>
    )
 }

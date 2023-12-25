@@ -22,10 +22,10 @@ const links = [
       active: 'home'
    },
    {
-      name: 'Portfolio',
-      to: '/portfolio',
-      active: 'portfolio'
-   }
+      name: 'Policy Privacy',
+      to: '/privacy-policy',
+      active: 'privacy-policy'
+   },
 ]
 
 export default function Navbar({darkMode, handleClick}) {
@@ -36,7 +36,7 @@ export default function Navbar({darkMode, handleClick}) {
       <Box component={'nav'} width={'100%'}>
          <Box component={'ul'} display={'flex'} justifyContent={'center'} alignItems={'center'}
               gap={{xs: '2rem', md: '8rem'}}
-              textTransform={'lowercase'} fontSize={'1rem'}>
+              fontSize={'1rem'}>
             {links.map((link, index) => (
                 <li className={(link.active === active && !link.image) ? Style.active : ''} key={index}>
                    <Link aria-label={'home page'} to={link.to} onClick={() => setActive(link.active)}>

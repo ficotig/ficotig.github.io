@@ -1,17 +1,30 @@
 import React from 'react';
-import {Box} from "@mui/material";
+import { Box } from "@mui/material";
 
 function EmojiBullet(props) {
-    const {link, emoji, text} = props;
-
-    return (
-        <a href={link} target="_blank" rel="noopener noreferrer" style={{fontSize: '1rem', lineHeight: '1.5'}}>
+    const { link, emoji, text } = props;
+    let Icon = [];
+    if (link) {
+        Icon.push(<a key={text} href={link} target="_blank" rel="noopener noreferrer" style={{ fontSize: '1rem', lineHeight: '1.5' }}>
             <Box component={'span'} aria-label="cheese"
-                 role="img"
-                 mr={{xs: '0.5rem', md: '1rem'}} fontSize={'1.5rem'}>{emoji}
+                role="img"
+                mr={{ xs: '0.5rem', md: '1rem' }} fontSize={'1.5rem'}>{emoji}
             </Box>
             {text}
-        </a>
+        </a>);
+    } else {
+        Icon.push(
+            <p key={text} target="_blank" style={{ fontSize: '1rem', lineHeight: '1.5' }}>
+                <Box component={'span'} aria-label="cheese"
+                    role="img"
+                    mr={{ xs: '0.5rem', md: '1rem' }} fontSize={'1.5rem'}>{emoji}
+                </Box>
+                {text}
+            </p>
+        );
+    }
+    return (
+        Icon
     );
 }
 
