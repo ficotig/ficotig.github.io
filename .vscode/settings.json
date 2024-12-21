@@ -13,8 +13,7 @@
         "node_modules": true,
         ".gitattributes": true,
         ".gitignore": true,
-        "package-lock.json": true,
-        "README.md": true
+        "package-lock.json": true
     },
     "hide-files.files": [
         ".idea",
@@ -24,7 +23,6 @@
         "node_modules",
         ".gitattributes",
         ".gitignore",
-        "package-lock.json",
-        "README.md"
+        "package-lock.json"
     ]
 }
