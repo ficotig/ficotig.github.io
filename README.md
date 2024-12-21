@@ -1,6 +1,6 @@
 # Personal Portfolio
 
-![img](![alt text](image.png))
+![alt text](image.png)
 
 [View Live](https://ficotig.github.io/)
 
