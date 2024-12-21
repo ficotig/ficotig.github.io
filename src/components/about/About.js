@@ -27,10 +27,14 @@ export default function About() {
 
    function philosophyOfLifeText() {
       return <>
-         <p><span className={Style.pink}>ficotig $</span> cd profile/philosophyOfLife</p>
-         <p><span className={Style.pink}>ficotig/profile/philosophyOfLife <span className={Style.green}>(main)</span> $</span> ls</p>
+         <p><span className={Style.pink}>ficotig $</span> cd profile/guidingPrinciples</p>
+         <p><span className={Style.pink}>ficotig/profile/guidingPrinciples <span className={Style.green}>(main)</span> $</span> ls</p>
          <span className={Style.green}>
-         I have a quiet personality and I am always striving for perfection in everything I do. I despise carelessness and consider quality to be the most important criterion for the products I create. I am passionate about developing applications with simple yet high-quality and captivating graphics. I pay close attention to how users feel so that I can improve the quality of my applications and enhance my value.
+         I am quiet, yet I have an unwavering desire to perfect every detail in everything I do. Carelessness is something I cannot tolerate because, to me, quality is the cornerstone of any product's value.
+
+I am passionate about developing applications with simple yet elegant and captivating designs. Every line and every color are meticulously crafted, as I believe simplicity should never equate to mediocrity. I continuously listen to user feedback, treating it as a guiding compass to refine my creations and improve myself.
+
+Put your heart and dedication into everything you do, for the smallest details create the greatest impact. The diligence you show today lays the foundation for lasting value tomorrow. I am not just creating products but also crafting inspiration and connections.
          </span>
       </>;
    }

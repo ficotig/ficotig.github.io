@@ -8,6 +8,12 @@
   color: $green;
 }
 
+.ficotig {
+  background: -webkit-linear-gradient(135deg, $purple, $pink);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .yellow {
   color: $yellow;
 }

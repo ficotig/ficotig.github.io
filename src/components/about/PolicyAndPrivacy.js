@@ -10,7 +10,7 @@ export default function PolicyAndPrivacy() {
       return <>
          <p><span className={Style.pink}>ficotig $</span> cat PolicyPrivacy </p>
          <p><span className={Style.pink}>PolicyPrivacy <span className={Style.green}>(main)</span> $ </span> ls <br/>  <br/>
-         Thank you for visiting the Ficotig website located at <a target={'_blank'} rel={'noreferrer'} href='https://ficotig.github.io'>https://ficotig.github.io</a>. This Privacy Policy outlines our policies for the use and collection of personally identifiable information and aggregate data about users of our site and products
+         Thank you for visiting the <span className={Style.ficotig}>Ficotig</span> website located at <a target={'_blank'} rel={'noreferrer'} href='https://ficotig.github.io'>https://ficotig.github.io</a>. This Privacy Policy outlines our policies for the use and collection of personally identifiable information and aggregate data about users of our site and products
          </p>
          <p>
          This page is used to inform you of our policies regarding the collection, use, and disclosure of personal information if you decide to use our services. By using our services, you agree to the collection and use of information by this policy. The personal information we collect will only be used to provide and improve our services, and we will not share it with anyone except as described in this Privacy Policy.
