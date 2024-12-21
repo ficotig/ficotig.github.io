@@ -20,7 +20,7 @@ const bioBullets = [
    {
       link: "https://www.google.com/maps/place/M%E1%BB%B9+Qu%C3%BD,+Th%C3%A1p+M%C6%B0%E1%BB%9Di,+%C4%90%E1%BB%93ng+Th%C3%A1p,+Vi%E1%BB%87t+Nam/@10.5448513,105.7158983,13z/data=!3m1!4b1!4m6!3m5!1s0x310a6048a97f23bd:0x263fc98dae3291f1!8m2!3d10.5453505!4d105.7468535!16s%2Fg%2F1tdq3g97?hl=vi-VN&entry=ttu",
       emoji: "🏡",
-      text: "I live in Dong Thap province"
+      text: "I live in Dong Thap"
    },
    {
       link: "mailto:nhutthanh340@gmail.com?subject=Let's work on something together!",
