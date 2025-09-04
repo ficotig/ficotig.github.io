@@ -15,7 +15,7 @@ export default function About() {
             <li>Full Name: Pham Nhut Thanh</li>
             <li>Year of Birth: 1998 🐯 ({moment().local().format('YYYY') - 1998} year old)</li>
             <li>Province: Dong Thap</li>
-            <li>Job: Freelance programmer</li>
+            <li>Job: Indie Developer</li>
             <li>Degree: I graduated from the University of Science in Ho Chi Minh City</li>
             <li>Major: Software engineering</li>
             <li>Hobbies: Listen to music, and watch movies on Netflix, or travel</li>

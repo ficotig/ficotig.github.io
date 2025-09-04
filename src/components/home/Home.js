@@ -58,7 +58,7 @@ export default function Home() {
          <Box>
             <h1>Hi, I am <span className={Style.firstName}>Thanh</span><span className={Style.hand}>✌️</span>
             </h1>
-            <h2>I am a Unity developer who works as a freelancer</h2>
+            <h2>I am a Unity developer working for myself</h2>
             <Box component={'ul'} p={'0.8rem'}>
                {bioBullets.map((bio, index) => (
                   <li key={index}>
