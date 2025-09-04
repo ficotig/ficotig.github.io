@@ -3,6 +3,7 @@
 h1 {
   font-size: 2rem;
   text-align: center;
+
   @media only screen and (min-width: 940px) {
     font-size: 3rem;
     text-align: left;
@@ -12,6 +13,7 @@ h1 {
 h2 {
   font-size: 1.25rem;
   text-align: center;
+
   @media only screen and (min-width: 940px) {
     font-size: 2rem;
     text-align: left;
@@ -25,7 +27,7 @@ h2 {
 }
 
 .appName {
-  background: -webkit-linear-gradient(45deg, $purple, $red);
+  background: -webkit-linear-gradient(135deg, $red, $green);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -44,7 +46,7 @@ h2 {
 }
 
 .iconApp {
-  background: linear-gradient(to bottom right, $purple, $red);
+  background: linear-gradient(to bottom right, $green, $red);
 }
 
 a {
@@ -52,19 +54,49 @@ a {
   transition: color 200ms ease;
 }
 
-a:hover {
-  color: $purple;
-  transition: color 200ms ease;
+// a:hover,
+i,
+h2 {
+  transition: all 500ms ease;
+
+  &:hover {
+    background: linear-gradient(135deg, $green, $red);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 }
 
 
 @keyframes wave {
-  0% { transform: rotate( 0.0deg) }
-  10% { transform: rotate(14.0deg) }
-  20% { transform: rotate(-8.0deg) }
-  30% { transform: rotate(14.0deg) }
-  40% { transform: rotate(-4.0deg) }
-  50% { transform: rotate(10.0deg) }
-  60% { transform: rotate( 0.0deg) }
-  100% { transform: rotate( 0.0deg) }
+  0% {
+    transform: rotate(0.0deg)
+  }
+
+  10% {
+    transform: rotate(14.0deg)
+  }
+
+  20% {
+    transform: rotate(-8.0deg)
+  }
+
+  30% {
+    transform: rotate(14.0deg)
+  }
+
+  40% {
+    transform: rotate(-4.0deg)
+  }
+
+  50% {
+    transform: rotate(10.0deg)
+  }
+
+  60% {
+    transform: rotate(0.0deg)
+  }
+
+  100% {
+    transform: rotate(0.0deg)
+  }
 }
