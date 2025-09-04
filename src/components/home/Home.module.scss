@@ -24,6 +24,12 @@ h2 {
   -webkit-text-fill-color: transparent;
 }
 
+.appName {
+  background: -webkit-linear-gradient(45deg, $purple, $red);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 
 .hand {
   animation-name: wave;
@@ -37,6 +43,10 @@ h2 {
   background: linear-gradient(to bottom right, $pink, $purple);
 }
 
+.iconApp {
+  background: linear-gradient(to bottom right, $purple, $red);
+}
+
 a {
   color: $dark;
   transition: color 200ms ease;
@@ -46,6 +56,7 @@ a:hover {
   color: $purple;
   transition: color 200ms ease;
 }
+
 
 @keyframes wave {
   0% { transform: rotate( 0.0deg) }

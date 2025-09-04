@@ -9,7 +9,9 @@ footer {
   color: $white;
   transition: all 400ms;
 
-  a, i, li {
+  a,
+  i,
+  li {
     color: $white;
     transition: color 400ms;
   }
@@ -20,6 +22,12 @@ footer {
 
   footer {
     color: $white;
+  }
+
+  a:hover,
+  i:hover {
+    color: $purple;
+    transition: color 200ms ease;
   }
 }
 

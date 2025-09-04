@@ -7,6 +7,7 @@ import { Route, Routes } from "react-router-dom";
 import { Box, Grid } from "@mui/material";
 import moment from "moment";
 import PolicyAndPrivacy from './about/PolicyAndPrivacy';
+import KalimbaFun from './home/KalimbaFun';
 export default function BaseLayout() {
    let [darkMode, setDarkMode] = useState(false);
 
@@ -43,6 +44,7 @@ export default function BaseLayout() {
                   <Route exact path={'/'} element={<Home />} />
                   <Route path={'/about'} element={<About />} />
                   <Route path={'/privacy-policy'} element={<PolicyAndPrivacy />} />
+                  <Route path={'/kalimba-fun'} element={<KalimbaFun />} />
                </Routes>
             </Grid>
             <Grid item>
@@ -50,7 +52,7 @@ export default function BaseLayout() {
                   py={'1.5rem'} sx={{ opacity: 0.7 }} width={'100%'}>
                   {moment().local().format('YYYY')}
                </Box>
-            </Grid>
+            </Grid> 
          </Grid>
       </Box>
    )
