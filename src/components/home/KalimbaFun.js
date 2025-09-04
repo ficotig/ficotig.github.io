@@ -23,17 +23,14 @@ export default function KalimbaFun() {
    return (
       <Box component={'main'} display={'flex'} flexDirection={{ xs: 'column', md: 'row' }} alignItems={'center'}
          justifyContent={'center'} minHeight={'calc(100vh - 175px)'}>
-         <Box className={classNames(Style.iconApp, Style.shadowed)} component={'img'} alt={'kalimba fun'} src={icon} width={{ xs: '50vh', md: '50vh' }}
-            height={{ xs: '50vh', md: '50vh' }}
+         <Box className={classNames(Style.iconApp, Style.shadowed)} component={'img'} alt={'kalimba fun'} src={icon} width={{ xs: '45vh', md: '45vh' }}
+            height={{ xs: '45vh', md: '45vh' }}
             borderRadius={'30%'} p={'0.75rem'} mb={{ xs: '1rem', sm: 0 }} mr={{ xs: 0, md: '2rem' }} />
          <Box>
             <h1><span className={Style.appName}>Kalimba Fun</span></h1>
             <br />
-            <br />
             <h2>Learn and play the kalimba easily</h2>
-            <br />
             <h2>Enjoy the exciting music</h2>
-            <br />
             <br />
             <br />
             <Box display={'flex'} gap={'5.5rem'} justifyContent={'center'} fontSize={{ xs: '5rem', md: '6.125rem' }}>
