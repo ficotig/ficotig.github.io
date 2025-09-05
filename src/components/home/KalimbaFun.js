@@ -30,7 +30,7 @@ export default function KalimbaFun() {
             <h1><span className={Style.appName}>Kalimba Fun</span></h1>
             <br />
             <h2>Learn and play the kalimba easily</h2>
-            <h2>Enjoy the exciting music</h2>
+            <h2>Enjoy exciting music</h2>
             <br />
             <br />
             <Box display={'flex'} gap={'5.5rem'} justifyContent={'center'} fontSize={{ xs: '5rem', md: '6.125rem' }}>
