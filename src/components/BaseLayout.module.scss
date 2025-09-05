@@ -16,8 +16,14 @@ footer {
     transition: color 400ms;
   }
 
-  a:visited {
-    color: $white;
+  a,
+  i {
+    transition: all 500ms ease;
+
+    &:hover {
+      color: $purple;
+      transition: color 500ms ease;
+    }
   }
 
   footer {

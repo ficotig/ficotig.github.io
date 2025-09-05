@@ -54,15 +54,12 @@ a {
   transition: color 200ms ease;
 }
 
-// a:hover,
-i,
-h2 {
+a  {
   transition: all 500ms ease;
 
   &:hover {
-    background: linear-gradient(135deg, $green, $red);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: $purple;
+    transition: color 500ms ease;
   }
 }
 
