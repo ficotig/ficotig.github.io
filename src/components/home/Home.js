@@ -31,6 +31,11 @@ const bioBullets = [
 
 const socials = [
    {
+      link: "https://apps.apple.com/us/developer/nhut-thanh-pham/id1836827722",
+      icon: "fa-brands fa-app-store-ios",
+      label: 'App Store'
+   },
+   {
       link: "https://play.google.com/store/apps/dev?id=6186427241683856830",
       icon: "fa-brands fa-google-play",
       label: 'Google Play'
