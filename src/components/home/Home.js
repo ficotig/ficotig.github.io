@@ -1,6 +1,6 @@
 import React from 'react';
 import Style from './Home.module.scss';
-import me from '../../img/self.jpeg';
+import me from '../../img/self.png';
 import classNames from 'classnames';
 import EmojiBullet from "./EmojiBullet";
 import SocialIcon from "./SocialIcon";
@@ -41,7 +41,7 @@ const socials = [
       label: 'Google Play'
    },
    {
-      link: 'https://www.tiktok.com/@nhut.thanh.66',
+      link: 'https://www.tiktok.com/@kalimba.fun',
       icon: "fa-brands fa-tiktok",
       label: 'Tiktok'
    },
