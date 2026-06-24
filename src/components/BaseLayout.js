@@ -50,8 +50,8 @@ export default function BaseLayout() {
                </Routes>
             </Grid>
             <Grid item>
-               <Box component={'footer'} display={'flex'} flexDirection={'column'} alignItems={'center'}
-                  py={'1.5rem'} sx={{ opacity: 0.7 }} width={'100%'}>
+               <Box component={'footer'} className={Style.footer} display={'flex'} flexDirection={'column'} alignItems={'center'}
+                  py={'1.5rem'} width={'100%'}>
                   {moment().local().format('YYYY')}
                </Box>
             </Grid> 

@@ -1,17 +1,36 @@
 import React from 'react';
-import {Box} from "@mui/material";
 
-export default function Toggler({darkMode, handleClick}) {
-    const transition = 'all 250ms ease'
+const toggleStyle = {
+   fontSize: '1.3rem',
+   cursor: 'pointer',
+   display: 'inline-flex',
+   alignItems: 'center',
+   justifyContent: 'center',
+   width: '2.2rem',
+   height: '2.2rem',
+   borderRadius: '50%',
+   transition: 'all 300ms cubic-bezier(0.34, 1.56, 0.64, 1)',
+   border: 'none',
+   background: 'transparent',
+};
 
+export default function Toggler({ darkMode, handleClick }) {
    return (
-      <Box fontSize={'1.5rem'} sx={{cursor: 'pointer', ":hover": {transform: 'translateY(-3px)', transition: transition}}}>
-         {
-            darkMode ?
-               <span onClick={handleClick} aria-label="Full Moon" role="img">🌙</span>
-               :
-               <span onClick={handleClick} aria-label="New Moon" role="img">🌕</span>
-         }
-      </Box>
-   )
+      <button
+         onClick={handleClick}
+         aria-label={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}
+         title={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}
+         style={toggleStyle}
+         onMouseEnter={e => {
+            e.currentTarget.style.transform = 'rotate(20deg) scale(1.2)';
+         }}
+         onMouseLeave={e => {
+            e.currentTarget.style.transform = 'rotate(0deg) scale(1)';
+         }}
+      >
+         <span role="img" aria-hidden="true">
+            {darkMode ? '🌙' : '🌕'}
+         </span>
+      </button>
+   );
 }

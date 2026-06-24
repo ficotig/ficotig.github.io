@@ -1,9 +1,9 @@
-import Style from './Home.module.scss';
+import React from 'react';
+import DetailStyle from './AppDetail.module.scss';
+import HomeStyle from './Home.module.scss';
 import icon from '../../img/icon.png';
 import classNames from 'classnames';
-import AppIcon from "./AppIcon";
-import { Box } from "@mui/material";
-
+import { useTranslation } from '../../context/LanguageContext';
 
 const socials = [
    {
@@ -16,31 +16,61 @@ const socials = [
       icon: "fa-brands fa-app-store-ios",
       label: 'App Store'
    }
-]
+];
 
 export default function KalimbaFun() {
+   const { t } = useTranslation();
 
    return (
-      <Box component={'main'} display={'flex'} flexDirection={{ xs: 'column', md: 'row' }} alignItems={'center'}
-         justifyContent={'center'} minHeight={'calc(100vh - 175px)'}>
-         <Box className={classNames(Style.iconApp, Style.shadowed)} component={'img'} alt={'kalimba fun'} src={icon} width={{ xs: '45vh', md: '45vh' }}
-            height={{ xs: '45vh', md: '45vh' }}
-            borderRadius={'30%'} p={'0.75rem'} mb={{ xs: '1rem', sm: 0 }} mr={{ xs: 0, md: '2rem' }} />
-         <Box>
-            <h1><span className={Style.appName}>Kalimba Fun</span></h1>
-            <br />
-            <h2>Learn and play the kalimba easily</h2>
-            <h2>Enjoy exciting music</h2>
-            <br />
-            <br />
-            <Box display={'flex'} gap={'5.5rem'} justifyContent={'center'} fontSize={{ xs: '5rem', md: '6.125rem' }}>
-               {socials.map((social, index) => (
-                  <div style={{ textAlign: "center" }}>
-                     <AppIcon key={index} link={social.link} icon={social.icon} label={social.label} />
-                  </div>
-               ))}
-            </Box>
-         </Box>
-      </Box>
-   )
+      <div className={DetailStyle.page}>
+         <div className={DetailStyle.contentRow}>
+
+            {/* App icon with entrance + float animation */}
+            <div
+               className={DetailStyle.iconContainer}
+               style={{ '--glow-color': 'rgba(255, 96, 87, 0.3)' }}
+            >
+               <img
+                  className={classNames(DetailStyle.appIcon, DetailStyle.iconEntrance, HomeStyle.shadowed)}
+                  src={icon}
+                  alt="Kalimba Fun app icon"
+                  style={{
+                     width: '260px',
+                     height: '260px',
+                     borderRadius: '30%',
+                     objectFit: 'cover',
+                  }}
+               />
+            </div>
+
+            {/* Text content */}
+            <div className={DetailStyle.textContent}>
+               <h1 className={DetailStyle.appTitle}>
+                  <span className={DetailStyle.titleKalimba}>Kalimba Fun</span>
+               </h1>
+               <p className={DetailStyle.tagline}>{t('games.kalimba.tagline')}</p>
+               <p className={classNames(DetailStyle.description, DetailStyle.revealed)}>
+                  {t('games.kalimba.description')}
+               </p>
+
+               <div className={DetailStyle.storeRow}>
+                  {socials.map((social) => (
+                     <a
+                        key={social.link}
+                        href={social.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={DetailStyle.storeLink}
+                        aria-label={`Download Kalimba Fun on ${social.label}`}
+                     >
+                        <i className={social.icon} aria-hidden="true" />
+                        <span>{social.label}</span>
+                     </a>
+                  ))}
+               </div>
+            </div>
+
+         </div>
+      </div>
+   );
 }
