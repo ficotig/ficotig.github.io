@@ -8,6 +8,7 @@ import { Box, Grid } from "@mui/material";
 import moment from "moment";
 import PolicyAndPrivacy from './about/PolicyAndPrivacy';
 import KalimbaFun from './home/KalimbaFun';
+import LightFusion from './home/LightFusion';
 export default function BaseLayout() {
    let [darkMode, setDarkMode] = useState(false);
 
@@ -45,6 +46,7 @@ export default function BaseLayout() {
                   <Route path={'/about'} element={<About />} />
                   <Route path={'/privacy-policy'} element={<PolicyAndPrivacy />} />
                   <Route path={'/kalimba-fun'} element={<KalimbaFun />} />
+                  <Route path={'/light-fusion'} element={<LightFusion />} />
                </Routes>
             </Grid>
             <Grid item>
