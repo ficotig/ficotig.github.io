@@ -34,6 +34,7 @@ const socials = [
 export default function Home() {
    const {t} = useTranslation();
    const [scrolled, setScrolled] = useState(false);
+   const [imgLoaded, setImgLoaded] = useState(false);
 
    useEffect(() => {
       const handleScroll = () => setScrolled(window.scrollY > 80);
@@ -44,22 +45,22 @@ export default function Home() {
    const bioBullets = [
       {
          link: "",
-         emoji: "🎹",
+         icon: "fa-solid fa-music",
          text: t('home.bio.music'),
       },
       {
          link: '',
-         emoji: "🧑‍💻",
+         icon: "fa-solid fa-gamepad",
          text: t('home.bio.game')
       },
       {
          link: "https://www.google.com/maps/place/M%E1%BB%B9+Qu%C3%BD,+Th%C3%A1p+M%C6%B0%E1%BB%9Di,+%C4%90%E1%BB%93ng+Th%C3%A1p,+Vi%E1%BB%87t+Nam/@10.5448513,105.7158983,13z/data=!3m1!4b1!4m6!3m5!1s0x310a6048a97f23bd:0x263fc98dae3291f1!8m2!3d10.5453505!4d105.7468535!16s%2Fg%2F1tdq3g97?hl=vi-VN&entry=ttu",
-         emoji: "🏡",
+         icon: "fa-solid fa-location-dot",
          text: t('home.bio.location')
       },
       {
          link: "mailto:nhutthanh340@gmail.com?subject=Let's work on something together!",
-         emoji: "✉️",
+         icon: "fa-solid fa-envelope",
          text: t('home.bio.contact')
       }
    ];
@@ -90,17 +91,24 @@ export default function Home() {
                }}
             />
 
-            {/* Avatar with entrance + float animation */}
+            {/* Avatar with entrance + float animation — fades in only after image load */}
             <Box
-               className={classNames(Style.avatar, Style.shadowed, Style.heroAvatar)}
+               className={classNames(Style.avatar, Style.shadowed, imgLoaded && Style.heroAvatar)}
                component={'img'}
                alt={'image of man smiling at the camera'}
                src={me}
+               onLoad={() => setImgLoaded(true)}
                width={{xs: '260px', md: '300px'}}
                height={{xs: '260px', md: '300px'}}
                borderRadius={'50%'}
                p={'0.75rem'}
-               sx={{ flexShrink: 0, position: 'relative', zIndex: 1 }}
+               sx={{
+                  flexShrink: 0,
+                  position: 'relative',
+                  zIndex: 1,
+                  opacity: imgLoaded ? undefined : 0,
+                  transition: 'opacity 600ms ease',
+               }}
             />
 
             {/* Text content with staggered entrance animations */}
@@ -109,7 +117,9 @@ export default function Home() {
                   <h1>
                      {t('home.greeting')}
                      <span className={Style.firstName}>{t('home.name')}</span>
-                     <span className={Style.hand}> ✌️</span>
+                     <span className={Style.hand}>
+                        <i className="fa-solid fa-hand-peace" style={{ color: '#ffbd2e', marginLeft: '0.35rem' }} />
+                     </span>
                   </h1>
                </Box>
 
@@ -120,17 +130,17 @@ export default function Home() {
                <Box component={'ul'} p={'0.8rem'} className={Style.heroBullets}>
                   {bioBullets.map((bio, index) => (
                      <li key={index} style={{ transitionDelay: `${index * 60}ms` }}>
-                        <EmojiBullet link={bio.link} emoji={bio.emoji} text={bio.text}/>
+                        <EmojiBullet link={bio.link} icon={bio.icon} text={bio.text}/>
                      </li>
                   ))}
                </Box>
 
                <Box
-                  display={'flex'} gap={'1.5rem'} justifyContent={'center'}
-                  fontSize={{xs: '2rem', md: '2.5rem'}}
+                  display={'flex'} gap={'0.65rem'} justifyContent={'center'}
+                  flexWrap={'wrap'}
                   className={Style.heroSocials}
                >
-                  {socials.map((social, index) => (
+                  {socials.map((social) => (
                      <SocialIcon key={social.link} link={social.link} icon={social.icon} label={social.label} />
                   ))}
                </Box>

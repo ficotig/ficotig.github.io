@@ -10,28 +10,47 @@ import PolicyAndPrivacy from './about/PolicyAndPrivacy';
 import KalimbaFun from './home/KalimbaFun';
 import LightFusion from './home/LightFusion';
 export default function BaseLayout() {
-   let [darkMode, setDarkMode] = useState(false);
+   // userOverride = null means "auto by time", true/false means manually set
+   const [darkMode, setDarkMode] = useState(() => {
+      const hour = new Date().getHours();
+      return hour < 6 || hour >= 18; // dark outside 06:00–18:00
+   });
+   const [userOverride, setUserOverride] = useState(null);
 
+   // Manual toggle — records override so auto-timer won't fight the user
    function handleClick() {
-      setDarkMode(!darkMode);
+      const next = !darkMode;
+      setDarkMode(next);
+      setUserOverride(next);
    }
 
+   // Auto-switch by time every minute (only when user hasn't overridden)
    useEffect(() => {
-      const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-      
-      setDarkMode(darkModeMediaQuery.matches);
-
-      const handleChange = (e) => {
-         setDarkMode(e.matches);
+      const getAutoDark = () => {
+         const hour = new Date().getHours();
+         return hour < 6 || hour >= 18;
       };
 
-      darkModeMediaQuery.addEventListener('change', handleChange);
-
-      // Clear the event listener when the component unmounts
-      return () => {
-         darkModeMediaQuery.removeEventListener('change', handleChange);
+      const tick = () => {
+         if (userOverride === null) {
+            setDarkMode(getAutoDark());
+         }
       };
-   }, []);
+
+      const interval = setInterval(tick, 60_000);
+      return () => clearInterval(interval);
+   }, [userOverride]);
+
+   // Sync body class
+   useEffect(() => {
+      if (darkMode) {
+         document.body.classList.add('dark');
+         document.body.classList.remove('light');
+      } else {
+         document.body.classList.add('light');
+         document.body.classList.remove('dark');
+      }
+   }, [darkMode]);
 
    return (
       <Box className={darkMode ? Style.dark : Style.light}>

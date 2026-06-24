@@ -57,7 +57,7 @@ i {
       color: $white;
     }
     :global(.light) & {
-      color: $dark;
+      color: #2e0a6e; // Richer deep purple — no black/gray
     }
   }
 

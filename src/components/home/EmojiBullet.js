@@ -1,11 +1,10 @@
 import React from 'react';
 import Style from "./EmojiBullet.module.scss";
 
-function EmojiBullet({ link, emoji, text }) {
-   const isEnvelope = emoji === "✉️";
+function EmojiBullet({ link, icon, text }) {
    const emojiSpan = (
       <span className={Style.emoji} aria-hidden="true">
-         {isEnvelope ? <i className="fa-solid fa-envelope" style={{ color: '#8D53FF', fontSize: '1.2rem', marginRight: '0.15rem' }} /> : emoji}
+         <i className={icon} />
       </span>
    );
 
@@ -18,7 +17,7 @@ function EmojiBullet({ link, emoji, text }) {
             className={Style.bulletRow}
          >
             {emojiSpan}
-            <span>{text}</span>
+            <span className={Style.text}>{text}</span>
          </a>
       );
    }
@@ -26,7 +25,7 @@ function EmojiBullet({ link, emoji, text }) {
    return (
       <div className={Style.bulletRow} style={{ cursor: 'default' }}>
          {emojiSpan}
-         <span>{text}</span>
+         <span className={Style.text}>{text}</span>
       </div>
    );
 }

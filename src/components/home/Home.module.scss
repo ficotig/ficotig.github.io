@@ -14,12 +14,19 @@ h1 {
   }
 }
 
+// Role subtitle — brand gradient (purple → pink → accent)
 h2 {
   font-size: 1.15rem;
-  font-weight: 500;
+  font-weight: 600;
   text-align: center;
-  opacity: 0.75;
-  margin-top: 0.35rem;
+  margin-top: 0.4rem;
+  // Màu chủ đạo gradient
+  background: linear-gradient(135deg, $purple 0%, $pink 55%, #c084fc 100%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: subtitleGradient 8s ease-in-out infinite;
 
   @media only screen and (min-width: 940px) {
     font-size: 1.6rem;
@@ -27,14 +34,15 @@ h2 {
   }
 }
 
-// ─── Gradient text ────────────────────────────────────────────────────────────
+// ─── Gradient name text ───────────────────────────────────────────────────
 .firstName {
-  background: linear-gradient(135deg, $purple, $pink, #ff90c8, $purple);
+  background: linear-gradient(135deg, $purple, $pink, #f0abfc, #a78bfa, $purple);
   background-size: 300% 300%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  animation: gradientShift 6s ease infinite;
+  animation: gradientShift 5s ease-in-out infinite;
+  will-change: background-position;
 }
 
 .appName {
@@ -44,91 +52,88 @@ h2 {
   background-clip: text;
 }
 
-// ─── Waving hand ───────────────────────────────────────────────────────────
+// ─── Waving hand ─────────────────────────────────────────────────────────
 .hand {
-  animation-name: wave;
-  animation-duration: 2.5s;
-  animation-iteration-count: infinite;
+  animation: wave 2.5s ease-in-out infinite;
   transform-origin: 70% 70%;
   display: inline-block;
+  will-change: transform;
 }
 
-// ─── Avatar ─────────────────────────────────────────────────────────────────
+// ─── Avatar ──────────────────────────────────────────────────────────────
 .avatar {
   background: linear-gradient(135deg, $pink, $purple);
-  animation: floatAvatar 5s ease-in-out infinite;
-  transition: transform 350ms cubic-bezier(0.34, 1.56, 0.64, 1),
-              box-shadow 350ms ease,
-              filter 350ms ease;
+  animation: floatAvatar 5s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+  transition: transform 400ms cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 400ms ease,
+              filter 400ms ease;
+  will-change: transform;
 
   &:hover {
     transform: scale(1.04) translateY(-6px) !important;
-    filter: drop-shadow(0 12px 32px rgba(141, 83, 255, 0.5));
+    filter: drop-shadow(0 14px 36px rgba(141, 83, 255, 0.55));
     animation-play-state: paused;
   }
 }
 
 .iconApp {
   background: linear-gradient(135deg, $green, $red);
-  animation: floatAvatar 4.5s ease-in-out infinite;
-  transition: transform 350ms cubic-bezier(0.34, 1.56, 0.64, 1),
-              filter 350ms ease;
+  animation: floatAvatar 4.5s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+  transition: transform 400ms cubic-bezier(0.34, 1.56, 0.64, 1),
+              filter 400ms ease;
+  will-change: transform;
 
   &:hover {
     transform: scale(1.05) translateY(-6px) !important;
-    filter: drop-shadow(0 12px 32px rgba(255, 96, 87, 0.4));
+    filter: drop-shadow(0 14px 36px rgba(255, 96, 87, 0.4));
     animation-play-state: paused;
   }
 }
 
-// ─── Hero entrance animations ──────────────────────────────────────────────
+// ─── Hero entrance animations ─────────────────────────────────────────────
 .heroText {
   opacity: 0;
-  transform: translateY(24px);
-  animation: fadeSlideUp 600ms ease-out 150ms forwards;
+  transform: translateY(28px);
+  animation: fadeSlideUp 700ms cubic-bezier(0.22, 1, 0.36, 1) 150ms forwards;
 }
 
 .heroSubText {
   opacity: 0;
-  transform: translateY(16px);
-  animation: fadeSlideUp 600ms ease-out 280ms forwards;
+  transform: translateY(20px);
+  animation: fadeSlideUp 700ms cubic-bezier(0.22, 1, 0.36, 1) 300ms forwards;
 }
 
 .heroBullets {
   opacity: 0;
-  transform: translateY(16px);
-  animation: fadeSlideUp 600ms ease-out 400ms forwards;
+  transform: translateY(20px);
+  animation: fadeSlideUp 700ms cubic-bezier(0.22, 1, 0.36, 1) 430ms forwards;
 }
 
 .heroSocials {
   opacity: 0;
-  transform: translateY(16px);
-  animation: fadeSlideUp 600ms ease-out 520ms forwards;
+  transform: translateY(20px);
+  animation: fadeSlideUp 700ms cubic-bezier(0.22, 1, 0.36, 1) 560ms forwards;
 }
 
 .heroAvatar {
   opacity: 0;
-  transform: translateX(-32px);
-  animation: fadeSlideRight 600ms ease-out 80ms forwards;
+  transform: translateX(-36px);
+  animation: fadeSlideRight 700ms cubic-bezier(0.22, 1, 0.36, 1) 80ms forwards;
 }
 
-// ─── Social icons ──────────────────────────────────────────────────────────────
-// default text color
+// ─── Social icons ─────────────────────────────────────────────────────────
+// Default link colour — brand purple (no black/gray ever)
 a {
-  color: $dark;
-  transition: color 200ms ease;
-}
-
-a {
-  transition: all 500ms ease;
+  color: $purple;
+  transition: all 400ms cubic-bezier(0.22, 1, 0.36, 1);
 
   &:hover {
-    color: $purple;
-    transition: color 500ms ease;
+    color: $pink;
   }
 }
 
-// Animated gradient border container for social row
+
+// Radial glow behind social row icons
 .heroSocials a {
   position: relative;
 
@@ -136,10 +141,10 @@ a {
     content: '';
     position: absolute;
     inset: 0;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(141, 83, 255, 0.2) 0%, transparent 75%);
+    border-radius: 999px;
+    background: radial-gradient(circle, rgba(141, 83, 255, 0.18) 0%, transparent 75%);
     opacity: 0;
-    transition: opacity 250ms ease;
+    transition: opacity 300ms ease;
     pointer-events: none;
   }
 
@@ -148,21 +153,46 @@ a {
   }
 }
 
-// ─── Keyframes ────────────────────────────────────────────────────────────────────────
+// ─── Scroll indicator ─────────────────────────────────────────────────────
+.scrollIndicator {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+  opacity: 0;
+  animation: fadeSlideUp 700ms cubic-bezier(0.22, 1, 0.36, 1) 950ms forwards;
+}
+
+.scrollArrow {
+  display: inline-block;
+  font-size: 1.5rem;
+  // Brand gradient colour on arrow
+  background: linear-gradient(180deg, $purple, $pink);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: bounceDown 2s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+  user-select: none;
+  opacity: 0.7;
+  will-change: transform;
+}
+
+// ─── Keyframes ────────────────────────────────────────────────────────────
 @keyframes wave {
-  0%   { transform: rotate(0.0deg) }
-  10%  { transform: rotate(14.0deg) }
-  20%  { transform: rotate(-8.0deg) }
-  30%  { transform: rotate(14.0deg) }
-  40%  { transform: rotate(-4.0deg) }
-  50%  { transform: rotate(10.0deg) }
-  60%  { transform: rotate(0.0deg) }
-  100% { transform: rotate(0.0deg) }
+  0%   { transform: rotate(0deg); }
+  10%  { transform: rotate(14deg); }
+  20%  { transform: rotate(-8deg); }
+  30%  { transform: rotate(14deg); }
+  40%  { transform: rotate(-4deg); }
+  50%  { transform: rotate(10deg); }
+  60%  { transform: rotate(0deg); }
+  100% { transform: rotate(0deg); }
 }
 
 @keyframes floatAvatar {
   0%, 100% { transform: translateY(0px); }
-  50%       { transform: translateY(-10px); }
+  50%       { transform: translateY(-12px); }
 }
 
 @keyframes fadeSlideUp {
@@ -179,34 +209,20 @@ a {
   }
 }
 
-// ─── Scroll indicator ──────────────────────────────────────────────────────
-.scrollIndicator {
-  position: absolute;
-  bottom: 1.5rem;
-  left: 50%;
-  transform: translateX(-50%);
-  pointer-events: none;
-  opacity: 0;
-  animation: fadeSlideUp 600ms ease-out 900ms forwards;
-}
-
-.scrollArrow {
-  display: inline-block;
-  font-size: 1.5rem;
-  opacity: 0.45;
-  animation: bounceDown 1.8s ease-in-out infinite;
-  color: inherit;
-  user-select: none;
-}
-
-// Slowly shift the gradient left-to-right for an iridescent shimmer on the name
+// Iridescent shimmer on the name — purple → pink → violet → back
 @keyframes gradientShift {
-  0%   { background-position: 0% 50%; }
+  0%   { background-position: 0%   50%; }
   50%  { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  100% { background-position: 0%   50%; }
+}
+
+// Subtle gradient shift on the role subtitle
+@keyframes subtitleGradient {
+  0%, 100% { background-position: 0%   50%; }
+  50%       { background-position: 100% 50%; }
 }
 
 @keyframes bounceDown {
-  0%, 100% { transform: translateY(0); }
-  50%       { transform: translateY(8px); }
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(10px); }
 }

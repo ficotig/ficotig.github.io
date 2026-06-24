@@ -28,9 +28,11 @@ export default function Toggler({ darkMode, handleClick }) {
             e.currentTarget.style.transform = 'rotate(0deg) scale(1)';
          }}
       >
-         <span role="img" aria-hidden="true">
-            {darkMode ? '🌙' : '🌕'}
-         </span>
+         {darkMode ? (
+            <i className="fa-solid fa-moon" style={{ color: '#F1C40F', fontSize: '1.25rem' }} />
+         ) : (
+            <i className="fa-solid fa-sun" style={{ color: '#F39C12', fontSize: '1.25rem' }} />
+         )}
       </button>
    );
 }
