@@ -1,12 +1,12 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import Style from './Home.module.scss';
-import me from '../../img/self.png';
+import me from '../../img/self.jpg';
 import classNames from 'classnames';
 import EmojiBullet from "./EmojiBullet";
 import SocialIcon from "./SocialIcon";
 import GamesSection from "./GamesSection";
-import {Box} from "@mui/material";
-import {useTranslation} from "../../context/LanguageContext";
+import { Box } from "@mui/material";
+import { useTranslation } from "../../context/LanguageContext";
 
 const socials = [
    {
@@ -32,7 +32,7 @@ const socials = [
 ]
 
 export default function Home() {
-   const {t} = useTranslation();
+   const { t } = useTranslation();
    const [scrolled, setScrolled] = useState(false);
    const [imgLoaded, setImgLoaded] = useState(false);
 
@@ -68,10 +68,10 @@ export default function Home() {
    return (
       <Box component={'main'} display={'flex'} flexDirection={'column'}>
          {/* ── Hero section ── */}
-         <Box display={'flex'} flexDirection={{xs: 'column', md: 'row'}} alignItems={'center'}
-              justifyContent={'center'} minHeight={'calc(100vh - 80px)'}
-              px={{xs: '1.5rem', md: '3rem'}} gap={{xs: '2rem', md: '3rem'}}
-              position={'relative'} overflow={'hidden'}>
+         <Box display={'flex'} flexDirection={{ xs: 'column', md: 'row' }} alignItems={'center'}
+            justifyContent={'center'} minHeight={'calc(100vh - 80px)'}
+            px={{ xs: '1.5rem', md: '3rem' }} gap={{ xs: '2rem', md: '3rem' }}
+            position={'relative'} overflow={'hidden'}>
 
             {/* Decorative ambient glow blobs */}
             <Box
@@ -98,8 +98,8 @@ export default function Home() {
                alt={'image of man smiling at the camera'}
                src={me}
                onLoad={() => setImgLoaded(true)}
-               width={{xs: '260px', md: '300px'}}
-               height={{xs: '260px', md: '300px'}}
+               width={{ xs: '260px', md: '300px' }}
+               height={{ xs: '260px', md: '300px' }}
                borderRadius={'50%'}
                p={'0.75rem'}
                sx={{
@@ -130,7 +130,7 @@ export default function Home() {
                <Box component={'ul'} p={'0.8rem'} className={Style.heroBullets}>
                   {bioBullets.map((bio, index) => (
                      <li key={index} style={{ transitionDelay: `${index * 60}ms` }}>
-                        <EmojiBullet link={bio.link} icon={bio.icon} text={bio.text}/>
+                        <EmojiBullet link={bio.link} icon={bio.icon} text={bio.text} />
                      </li>
                   ))}
                </Box>
