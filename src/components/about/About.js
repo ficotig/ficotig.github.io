@@ -23,7 +23,6 @@ export default function About() {
             <li>{t('about.major')}: {t('about.majorVal')}</li>
             <li>{t('about.hobbies')}: {t('about.hobbiesVal')}</li>
             <li>{t('about.marriage')}: {t('about.marriageVal')}</li>
-            <li>{t('about.interestedIn')}: {t('about.interestedInVal')}</li>
          </ul>
       </>;
    }
@@ -49,4 +48,4 @@ export default function About() {
          <Terminal text={philosophyOfLifeText()} />
       </Box>
    )
-}
+}
